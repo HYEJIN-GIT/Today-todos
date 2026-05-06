@@ -1,8 +1,20 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
+import { todosStore } from '../../Store/todoStore'
 
 const TodosDetail = () => {
-  return (
+  const {id} = useParams()
+  console.log(id)
+  const {todoList} = todosStore()
+ 
+  console.log(todoList?.find((item)=>
+    item.id ===  Number(id)))
+  
+  
+  
+    return (
     <div>
+    {/* <div>{detailList.title}</div> */}
       
     </div>
   )

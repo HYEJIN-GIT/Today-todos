@@ -4,6 +4,7 @@ import './App.css'
 import HomePage from './Pages/Homepage/HomePage'
 import Header from './layout/Header'
 import Todos from './Pages/Todos/Todos'
+import TodosDetail from './Pages/Todos/TodosDetail'
 
 function App() {
   
@@ -13,7 +14,7 @@ function App() {
         <Route index element={<HomePage></HomePage>}></Route>
         <Route path='todos'>
         <Route index element={<Todos></Todos>}></Route>
-          <Route path=':id' element={<Todos></Todos>}></Route>
+          <Route path=':id' element={<TodosDetail></TodosDetail>}></Route>
 
         </Route>
       </Route>

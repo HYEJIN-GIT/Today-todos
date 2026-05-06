@@ -1,14 +1,15 @@
 import React from 'react'
 import { todosStore } from '../../Store/todoStore'
-
+import List from './List'
 const Todos = () => {
   const {todoList} = todosStore()
-  return (
+
+   return (
     <div>
     <div>
-    {todoList.map((item)=>(
-      <div className='cursor-pointer' >{item.title}</div>
-    ))}
+   
+     <List></List>
+    
   </div>
     </div>
   )

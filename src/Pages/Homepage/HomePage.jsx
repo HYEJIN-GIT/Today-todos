@@ -7,10 +7,7 @@ import Todos from '../Todos/Todos'
 
 const HomePage = () => {
   const {todoList} = todosStore()
-  const navigate = useNavigate()
-  const goToList = ()=>{
-    navigate(`/todos/${id}`)
-  }
+ 
   return (
     <div className='m-10'>
       {/* 남은 할일 보여주기 */}
