@@ -7,14 +7,13 @@ const TodosDetail = () => {
   console.log(id)
   const {todoList} = todosStore()
  
-  console.log(todoList?.find((item)=>
-    item.id ===  Number(id)))
-  
+  const detailList = todoList?.find((item)=>
+    item.id ===  Number(id))
   
   
     return (
     <div>
-    {/* <div>{detailList.title}</div> */}
+    <div>{detailList?.title}</div>
       
     </div>
   )

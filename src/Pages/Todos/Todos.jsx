@@ -1,17 +1,18 @@
 import React from 'react'
 import { todosStore } from '../../Store/todoStore'
 import List from './List'
+import AddTodos from '../Homepage/AddTodos'
 const Todos = () => {
   const {todoList} = todosStore()
 
    return (
-    <div>
-    <div>
-   
+  
+    <div className='flex justify-between m-5'>
+    <AddTodos></AddTodos>
      <List></List>
     
   </div>
-    </div>
+  
   )
 }
 

@@ -11,10 +11,17 @@ const List = () => {
   return (
     <div>
         {
-            todoList.map((item)=>
-                <div className="m-5 cursor-pointer"onClick={()=>goToDetail(item.id)}>{item.title}</div>)
+            todoList.map((item)=>(
+              <div className='flex '>
+                <input type='checkbox'></input>
+               <div className="m-5 w-100 cursor-pointer"onClick={()=>goToDetail(item.id)}>{item.title}</div>
+             
+              </div>
+              
+            )
+            )
         }
-    
+       
     </div>
   )
 }
