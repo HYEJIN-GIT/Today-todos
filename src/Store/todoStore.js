@@ -13,7 +13,12 @@ export const todosStore = create((set)=>({
     }))),
     deleteTodos:(id)=>set((state)=>({
         todoList: state.todoList.filter((item)=>item.id !== id)
-    }))
+    })),
+    completeTodos : (id)=>set((state)=>({
+        todoList : state.todoList.map((item)=>{
+        return   item.id === id ? {...item,isDone:!item.isDone} : item
+        })
+    })),
 
 
 }))
