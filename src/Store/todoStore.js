@@ -10,7 +10,10 @@ export const todosStore = create((set)=>({
             content,
             isDone : false
         }]
-    })))
+    }))),
+    deleteTodos:(id)=>set((state)=>({
+        todoList: state.todoList.filter((item)=>item.id !== id)
+    }))
 
 
 }))

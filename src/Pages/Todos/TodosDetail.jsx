@@ -14,6 +14,7 @@ const TodosDetail = () => {
     return (
     <div>
     <div>{detailList?.title}</div>
+    <div>{detailList?.content}</div>
       
     </div>
   )
