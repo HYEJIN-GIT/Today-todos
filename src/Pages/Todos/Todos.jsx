@@ -3,7 +3,6 @@ import { todosStore } from '../../Store/todoStore'
 import List from './List'
 import AddTodos from '../Homepage/AddTodos'
 const Todos = () => {
-  const {todoList} = todosStore()
 
    return (
   
