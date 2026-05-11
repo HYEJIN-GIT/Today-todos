@@ -20,6 +20,12 @@ export const todosStore = create(
                 return   item.id === id ? {...item,isDone:!item.isDone} : item
                 })
             })),
+            updateTodos : (id,newContent)=>set((state)=>({
+                todoList: state.todoList.map((item) =>
+                    item.id === id
+                      ? { ...item, content: newContent }
+                      : item)
+            }))
         
     }),{
         name : "todo-storage"

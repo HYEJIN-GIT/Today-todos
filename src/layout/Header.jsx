@@ -12,10 +12,7 @@ const Header = () => {
   const goToHome = () => {
     navigate('/')
   }
-  const goToLogin = () => {
-    navigate('/login')
-  }
-
+  
 
   return (
     <div className="min-h-screen bg-[#fbf4f8] overflow-hidden">
