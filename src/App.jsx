@@ -11,7 +11,7 @@ import Private from './Pages/Login/Private'
 import Method from './Pages/Homepage/Method'
 
 function App() {
-  const [authenticate,setAuthenticate] = useState(false)
+ 
   return (
     <Routes>
       <Route path='/' element={<Header ></Header>}>

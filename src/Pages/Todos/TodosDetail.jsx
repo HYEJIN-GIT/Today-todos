@@ -56,7 +56,12 @@ const TodosDetail = () => {
 
        
       </div>
+      <div>
+      {
+    
+      detailList?.isDone === true? "할일이 완료 되었습니다" : ""}
 
+      </div>
       <button
         className="btn"
         onClick={() => deleteList(detailList?.id)}
@@ -64,21 +69,20 @@ const TodosDetail = () => {
         삭제
       </button>
 
-    <button className="btn"
-    onClick={updateList}
-    >
-      {
-        isEdit ? "저장" : "수정"
-      }
-      </button>
-
-
-      {/* <button
-        className="btn"
-        onClick={handleUpdate}
-      >
-        {isEdit ? '저장' : '수정'}
-      </button> */}
+      <button
+  className="btn"
+  onClick={updateList}
+  disabled={detailList?.isDone}
+>
+  {
+    detailList?.isDone
+      ? "수정 금지"
+      : isEdit
+      ? "저장"
+      : "수정"
+  }
+</button>
+   
     </div>
   )
 }
