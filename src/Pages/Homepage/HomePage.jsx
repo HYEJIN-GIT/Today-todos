@@ -1,13 +1,15 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { replace, useNavigate } from 'react-router-dom'
 
 const HomePage = () => {
   const navigate = useNavigate()
 
   const goToTodos = () => {
-    navigate('/todos')
+    navigate('/todos', replace)
   }
-
+  const goToMethod = ()=>{
+    navigate('/method', replace)
+  }
   return (
     <div className="flex items-center justify-center min-h-[75vh]">
       
@@ -61,6 +63,7 @@ const HomePage = () => {
               transition
               cursor-pointer
             "
+            onClick={goToMethod}
           >
             둘러보기
           </button>

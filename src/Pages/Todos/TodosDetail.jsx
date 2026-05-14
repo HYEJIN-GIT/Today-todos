@@ -11,23 +11,29 @@ const TodosDetail = () => {
     (item) => item.id === Number(id)
   )
 
-  const [isEdit, setIsEdit] = useState(false)
-  const [updateContent, setUpdateContent] = useState(
-    detailList?.content || ''
-  )
+  // const [isEdit, setIsEdit] = useState(false)
+  // const [updateContent, setUpdateContent] = useState(
+  //   detailList?.content || ''
+  // )
+
+
+
+  const [isEdit,setIsEdit] = useState(false)
+  const [updateContent,setUpdateContent] = useState(detailList?.content)
+
 
   const deleteList = (id) => {
     deleteTodos(id)
     navigate('/todos', replace)
   }
 
-  const handleUpdate = () => {
-    if (!isEdit) {
+
+  const updateList = ()=>{
+    if(!isEdit){
       setIsEdit(true)
       return
     }
-
-    updateTodos(detailList.id, updateContent)
+    updateTodos(detailList.id,updateContent)
     setIsEdit(false)
   }
 
@@ -38,14 +44,17 @@ const TodosDetail = () => {
       <div>
         오늘의 할일을 자세히 알려주세요 !
 
-        {isEdit ? (
-          <input
-            value={updateContent}
-            onChange={(e) => setUpdateContent(e.target.value)}
-          />
-        ) : (
-          detailList?.content
-        )}
+
+      {
+        isEdit ? <input 
+        value={updateContent}
+        onChange={(e)=>setUpdateContent(e.target.value)}
+        /> : detailList?.content
+      }
+ 
+ 
+
+       
       </div>
 
       <button
@@ -55,12 +64,21 @@ const TodosDetail = () => {
         삭제
       </button>
 
-      <button
+    <button className="btn"
+    onClick={updateList}
+    >
+      {
+        isEdit ? "저장" : "수정"
+      }
+      </button>
+
+
+      {/* <button
         className="btn"
         onClick={handleUpdate}
       >
         {isEdit ? '저장' : '수정'}
-      </button>
+      </button> */}
     </div>
   )
 }

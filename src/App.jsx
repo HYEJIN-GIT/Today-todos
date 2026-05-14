@@ -8,6 +8,7 @@ import TodosDetail from './Pages/Todos/TodosDetail'
 import LoginPage from './Pages/Login/LoginPage'
 import { useState } from 'react'
 import Private from './Pages/Login/Private'
+import Method from './Pages/Homepage/Method'
 
 function App() {
   const [authenticate,setAuthenticate] = useState(false)
@@ -15,6 +16,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Header ></Header>}>
         <Route index element={<HomePage></HomePage>}></Route>
+        <Route path='method' element={<Method></Method>}></Route>
         <Route path='login' element={<LoginPage></LoginPage>}></Route>
         <Route path='todos'>
         <Route index element={<Private></Private>}></Route>
